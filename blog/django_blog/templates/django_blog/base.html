@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <nav>
+        <ul class="trans" id="nav-menu">
+            <li><a href="{% url 'blog-home' %}">Home</a></li>
+            {%if user.is_authenticated%}
+            {{user.email}}
+            <li><a href="{% url 'post-create' %}">Create Post</a></li>
+            <li><a href="{% url 'logout' %}" class="right">Logout</a></li>
+            {%else%}
+            <li><a href="{% url 'login' %}" class="right">Login</a></li>
+            <li><a href="{% url 'signup' %}" class="right">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {%block content%}
+    {% endblock %}
+   
+</body>
+
+</html>

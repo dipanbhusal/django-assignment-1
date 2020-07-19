@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.banner{
+    position: relative;
+    text-align: center;
+}
+.banner .banner-img{
+    background-image: url(../images/1.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+.banner-text{
+    position: absolute;
+    bottom:40%;
+    left: 30%;  
+}
+
+.banner-text h1{
+    font-size: 43px;
+    color: #ffffff;
+    line-height: 100px;
+}
+
+.btn{
+    border: 3px solid transparent;
+    background-color: #ffa400;
+    padding:2vh 13vh;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-decoration: none;
+}
+.trans{
+    transition: all 0.5s;
+}
+
+.banner-text a:hover{
+    background-color: #ffffff;
+    color: #ffa400;
+}
+
+

@@ -1,0 +1,26 @@
+{%extends 'django_blog/base.html' %}
+{%block content%}
+<section id="home">
+    <div class="container">
+        {% for post in posts %}
+       
+        <div class="box">
+            <div class="contents">
+                <div class="post-title trans">
+                    <a href="{%url 'post-detail' post.slug %}">{{post.title}}</a> 
+                </div>
+                <div class="more-info">
+                    
+                    Posted at {{post.created_at}} by {{post.author}}
+                </div> 
+                <hr>
+                <div class="post-body">
+                    {{post.body |truncatechars:20}} <a href="{%url 'post-detail' post.slug %}">read more..</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</section>
+{%endblock content%}
+    

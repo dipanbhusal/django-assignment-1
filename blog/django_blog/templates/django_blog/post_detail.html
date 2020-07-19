@@ -1,0 +1,22 @@
+{% extends 'django_blog/base.html' %}
+
+{%block content %}
+<section class="post-container">
+    <main class="banner">
+        <div class="full-post-title">
+            {{post.title}}
+        </div>
+        <div class="other-info">
+            By {{post.author}} <br>
+            Posted at {{post.created_at}}
+        </div>
+    </main>
+    <div class="more-options">
+        <a href="{% url 'post-update' post.slug %}"> <button>Update Post</button></a>
+        <a href="{% url 'post-delete' post.slug %}"> <button>Delete Post</button></a>
+    </div>
+    <div class="full-post-body">
+        {{post.body}}
+    </div>
+</section>
+{%endblock content%}
